@@ -1,3 +1,9 @@
+.. image:: https://badge.fury.io/py/vcs-mirrors.svg
+   :target: https://badge.fury.io/py/vcs-mirrors
+
+.. image:: https://img.shields.io/pypi/pyversions/vcs-mirrors.svg
+   :target: https://pypi.python.org/pypi/vcs-mirrors
+
 vcs-mirrors
 ===========
 
