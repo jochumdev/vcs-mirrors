@@ -48,7 +48,7 @@ ENTRY_POINTS = {
 }
 
 setup(name='vcs_mirrors',
-      version='0.0.1',
+      version='0.0.2',
       description='',
       long_description='{}\n\n{}\n\n{}'.format(README, CHANGELOG, CONTRIBUTORS),
       license='MIT',
