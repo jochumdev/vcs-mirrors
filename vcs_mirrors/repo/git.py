@@ -75,9 +75,10 @@ class Repo(object):
         repo_dir_exists = True
         if not os.path.exists(repo_dir):
             repo_dir_exists = False
-            logging.debug('Makedirs: "%s"', repo_dir)
+            logging.debug('%s: Makedirs: "%s"' % (self, repo_dir))
             os.makedirs(repo_dir, mode=0o700)
 
+        logging.debug('%s: cd %s' % (self, os.path.abspath(repo_dir)))
         with Cd(repo_dir):
             if not repo_dir_exists:
                 run_cmd(['git', 'clone', '--bare', shlex.quote(repo_config['source']), '.'])
@@ -125,7 +126,14 @@ class Repo(object):
                 args.append('--force')
             if prune:
                 args.append('--prune')
-            args.extend(['dest', '--all'])
+            args.extend(['dest'])
+
+            args = ['git', 'push', '--tags']
+            if force:
+                args.append('--force')
+            if prune:
+                args.append('--prune')
+            args.append('dest')
 
             run_cmd(args)
 
