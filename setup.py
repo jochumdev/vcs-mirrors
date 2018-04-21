@@ -36,6 +36,7 @@ DEVELOPMENT_REQUIRES = [
     'autopep8',
     'flake8',
     'ipython',
+    'zest.releaser',
 ]
 
 DEPENDENCY_LINKS = []
