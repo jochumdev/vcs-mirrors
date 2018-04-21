@@ -79,10 +79,15 @@ class Host(object):
             api_version=4
         )
         # pylint: enable=E1101
+        self._api.auth()
 
     def _find_group(self, **kwargs):
         groups = self._api.groups.list()
         return _find_matches(groups, kwargs, False)
+
+    def _find_user(self, **kwargs):
+        users = self._api.users.list()
+        return _find_matches(users, kwargs, False)
 
     def _find_project(self, **kwargs):
         projects = self._api.projects.list(as_list=True)
@@ -97,8 +102,15 @@ class Host(object):
 
         group_obj = self._find_group(name=group)
         if group_obj is None:
+            group_obj = self._find_user(username=group)
+
+        if group_obj is None:
             logging.info('%s: Createing group: "%s"' % (self, group))
-            group_obj = self._api.groups.create({'name': group, 'path': group})
+            try:
+                group_obj = self._api.groups.create({'name': group, 'path': group})
+            except GitlabCreateError:
+                logging.error('Cannot create group "%s", error: path has already been taken.' % group)
+                return False
 
         project_options = {
             'name': name,
