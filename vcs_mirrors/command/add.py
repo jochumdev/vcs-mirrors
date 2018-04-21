@@ -11,14 +11,14 @@ from vcs_mirrors.lib.utils import get_url_host
 def configure_argparse(subparser):
     subparser.add_argument('-f', '--force',
                            help='force fetch and push (default False)',
-                           dest='tags',
+                           dest='force',
                            action='store_true',
                            default=False,
                            required=False)
 
     subparser.add_argument('-p', '--prune',
                            help='Prune on fetch and push (default False)',
-                           dest='tags',
+                           dest='prune',
                            action='store_true',
                            default=False,
                            required=False)
@@ -84,7 +84,6 @@ def execute(config, args):
         return 1
 
     repo_cfg = {
-        'method': args['method'],
         'source': args['source'],
         'dest': dest,
         'force': args['force'],

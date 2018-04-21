@@ -58,6 +58,8 @@ def main(args=None):
     logging.basicConfig(level=level, format=DEFAULT_LOG_FORMAT)
 
     config = load_config(parsed_args['yaml_file'])
+    if config['repos'] is None:
+        config['repos'] = {}
 
     # Execute the command
     which_command = parsed_args['which']

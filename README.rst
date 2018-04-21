@@ -72,7 +72,7 @@ If you give an host as target "add" creates the repo on the host and translates 
 Development
 +++++++++++
 
-pip install -e ."[development,gitlab,github]"
+    $ pip install -e ."[development,gitlab,github]"
 
 
 Keywords
