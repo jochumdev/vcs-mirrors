@@ -81,19 +81,19 @@ class Repo(object):
         with Cd(repo_dir):
             if not repo_dir_exists:
                 run_cmd(['git', 'clone', '--bare', shlex.quote(repo_config['source']), '.'])
-                run_cmd(['git', 'remote', 'rename', 'origin', 'source'])
+                #run_cmd(['git', 'remote', 'rename', 'origin', 'source'])
                 self._after_clone()
             else:
-                has_repo = run_cmd(['git', 'remote', 'get-url', 'source'], False).returncode == 0
+                has_repo = run_cmd(['git', 'remote', 'get-url', 'origin'], False).returncode == 0
                 if not has_repo:
-                    run_cmd(['git', 'remote', 'add', 'source', shlex.quote(repo_config['source'])])
+                    run_cmd(['git', 'remote', 'add', 'origin', shlex.quote(repo_config['source'])])
 
                 args = ['git', 'fetch']
                 if force:
                     args.append('--force')
                 if prune:
                     args.append('--prune')
-                args.append('source')
+                args.append('origin')
 
                 run_cmd(args)
 
