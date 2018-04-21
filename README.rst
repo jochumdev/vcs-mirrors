@@ -32,14 +32,20 @@ On Debian
 
 For Bazaar support:
 
+.. code:: bash
+
     $ apt install git-remote-bzr
 
 Install into a virtualenv:
+
+.. code:: bash
 
     $ virtualenv -p /usr/bin/python3 --no-site-packages venv
     $ venv/bin/pip install "vcs-mirrors[gitlab,github]"
 
 Then copy vcs-mirrors.yaml.example into your current-working-directory:
+
+.. code:: bash
 
     $ cp venv/lib/python3.6/site-packages/vcs-mirrors/vcs-mirrors.yaml.sample .
 
@@ -47,22 +53,30 @@ Edit it for your needs.
 
 Usage
 +++++
+.. code:: bash
 
-venv/bin/vcs-mirrors -h
-venv/bin/vcs-mirrors add -h
+    venv/bin/vcs-mirrors -h
+    venv/bin/vcs-mirrors add -h
 
 add examples:
 -------------
 
 This one try to create a repo "pcdummy/proxmox-dockerfiles" on git.lxch.eu - the identifier must be unique in the config file:
 
-    $ vcs-mirrors add me/p-dockerfiles https://github.com/pcdummy/proxmox-dockerfiles.git git.lxch.eu:pcdummy/proxmox-dockerfiles
+.. code:: bash
+
+   $ vcs-mirrors add me/p-dockerfiles https://github.com/pcdummy/proxmox-dockerfiles.git git.lxch.eu:pcdummy/proxmox-dockerfiles
+
 
 This doesn't:
+
+.. code:: bash
 
     $ vcs-mirrors add me/p-dockerfiles https://github.com/pcdummy/proxmox-dockerfiles.git git@git.lxch.eu:pcdummy/proxmox-dockerfiles.git
 
 Full mirroring include "prune" and "force" pull/push:
+
+.. code:: bash
 
     $ vcs-mirrors add -f -p me/p-dockerfiles https://github.com/pcdummy/proxmox-dockerfiles.git git.lxch.eu:pcdummy/proxmox-dockerfiles
 
@@ -71,6 +85,8 @@ If you give an host as target "add" creates the repo on the host and translates 
 
 Development
 +++++++++++
+
+.. code:: bash
 
     $ pip install -e ."[development,gitlab,github]"
 
