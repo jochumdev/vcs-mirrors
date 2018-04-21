@@ -1,0 +1,42 @@
+settings:
+  # Absolute or relative path to the store of repositories
+  local_path: repositories/
+
+# Hosts
+hosts:
+  gitlab.com:
+    type: gitlab
+    url: gitlab.com                   # Optional
+    api_key: <your-api-key>           # Replace with your key
+    ssl_verify: true                  # Default: True
+    public: true                      # Default: False
+    issues_enabled: true              # Default: False
+    wall_enabled: true                # Default: False
+    merge_requests_enabled: true      # Default: False
+    wiki_enabled: true                # Default: False
+    snippets_enabled: true            # Default: False
+    use_https: false                  # Defualt: False
+
+  github.com:
+    type: github
+    api_key: <your-api-key>           # Replace with your key
+    public: true                      # Default: True
+    issues_enabled: true              # Default: True
+    wiki_enabled: true                # Default: True
+    downloads_enabled: true           # Default: True
+    projects_enabled: true            # Default: True
+    use_https: false                  # Default: False
+
+  git.lxch.eu:
+    type: gitlab
+    api_key: <your-api-key>           # Replace with your key
+    public: true                      # Default: False
+    issues_enabled: true              # Default: False
+    wall_enabled: true                # Default: False
+    merge_requests_enabled: true      # Default: False
+    wiki_enabled: true                # Default: False
+    snippets_enabled: true            # Default: False
+    use_https: false                  # Defualt: False
+
+# Repos
+repos:

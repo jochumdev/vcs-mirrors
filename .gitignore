@@ -1,0 +1,8 @@
+.vscode/
+venv/
+
+repositories/
+vcs-mirrors.yaml
+
+__pycache__/
+*.egg-info
