@@ -8,7 +8,7 @@ This document describes changes between each past release.
 
 - Add another debug line (to show CWD changes). [pcdummy]
 - Add tag pushes. [pcdummy]
-
+- Make mirroring finaly working by using "--mirror". [pcdummy]
 
 0.0.2 (2018-04-21)
 ------------------

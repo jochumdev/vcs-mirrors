@@ -81,7 +81,7 @@ class Repo(object):
         logging.debug('%s: cd %s' % (self, os.path.abspath(repo_dir)))
         with Cd(repo_dir):
             if not repo_dir_exists:
-                run_cmd(['git', 'clone', '--bare', shlex.quote(repo_config['source']), '.'])
+                run_cmd(['git', 'clone', '--mirror', shlex.quote(repo_config['source']), '.'])
                 #run_cmd(['git', 'remote', 'rename', 'origin', 'source'])
                 self._after_clone()
             else:
@@ -120,6 +120,12 @@ class Repo(object):
             has_repo = run_cmd(['git', 'remote', 'get-url', 'dest'], False).returncode == 0
             if not has_repo:
                 run_cmd(['git', 'remote', 'add', 'dest', shlex.quote(repo_config['dest'])])
+                run_cmd(['git', 'config', '--add', 'remote.dest.push', "+refs/heads/*:refs/heads/*"])
+                run_cmd(['git', 'config', '--add', 'remote.dest.push', "+refs/tags/*:refs/tags/*"])
+                run_cmd(['git', 'config', 'remote.dest.mirror', 'true'])
+
+                if repo_config['dest'][0:4] == 'http':
+                    run_cmd(['git', 'config', 'credential.helper', 'store'])
 
             args = ['git', 'push']
             if force:
@@ -127,13 +133,6 @@ class Repo(object):
             if prune:
                 args.append('--prune')
             args.extend(['dest'])
-
-            args = ['git', 'push', '--tags']
-            if force:
-                args.append('--force')
-            if prune:
-                args.append('--prune')
-            args.append('dest')
 
             run_cmd(args)
 
