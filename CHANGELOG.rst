@@ -3,7 +3,7 @@ Changelog
 
 This document describes changes between each past release.
 
-0.0.3 (unreleased)
+0.0.3 (2018-04-22)
 ------------------
 
 - Add another debug line (to show CWD changes). [pcdummy]
