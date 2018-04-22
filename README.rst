@@ -53,7 +53,7 @@ Then copy vcs-mirrors.yaml.example into your current-working-directory:
 
 .. code:: bash
 
-    $ cp venv/lib/python3.6/site-packages/vcs-mirrors/vcs-mirrors.yaml.sample .
+    $ cp venv/lib/python3.6/site-packages/vcs-mirrors/vcs-mirrors.yaml.sample vcs-mirrors.yaml
 
 Edit it for your needs.
 
@@ -100,4 +100,4 @@ Development
 Keywords
 ++++++++
 
-gitlab github sync mirror vcs-mirror
+gitlab github sync mirror vcs-mirror bazaar
