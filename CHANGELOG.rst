@@ -6,7 +6,7 @@ This document describes changes between each past release.
 0.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Include python files in the pip packages, part2. [pcdummy]
 
 
 0.0.4 (2018-04-23)
