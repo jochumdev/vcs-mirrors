@@ -6,7 +6,7 @@ This document describes changes between each past release.
 0.0.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix another typo in MANIFEST.in. [pcdummy]
 
 
 0.0.5 (2018-04-23)

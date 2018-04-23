@@ -1,4 +1,4 @@
-include CHANGELOG.rst CONTRIBUTORS.rst LICENSE vcs-mirror.yaml.sample
+include CHANGELOG.rst CONTRIBUTORS.rst LICENSE vcs-mirrors.yaml.sample
 
 recursive-include * *.py
 
