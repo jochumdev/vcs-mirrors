@@ -3,7 +3,7 @@ Changelog
 
 This document describes changes between each past release.
 
-0.0.4 (unreleased)
+0.0.4 (2018-04-23)
 ------------------
 
 - Include python files in the pip packages. [pcdummy]
