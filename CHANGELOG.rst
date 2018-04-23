@@ -6,7 +6,7 @@ This document describes changes between each past release.
 0.0.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix pip install by moving away of PEP 420 Namespaces. [pcdummy]
 
 
 0.0.6 (2018-04-23)
