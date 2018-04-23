@@ -15,7 +15,7 @@ hosts:
     merge_requests_enabled: true      # Default: False
     wiki_enabled: true                # Default: False
     snippets_enabled: true            # Default: False
-    use_https: false                  # Defualt: False
+    use_https: false                  # Default: False
 
   github.com:
     type: github
@@ -36,7 +36,7 @@ hosts:
     merge_requests_enabled: true      # Default: False
     wiki_enabled: true                # Default: False
     snippets_enabled: true            # Default: False
-    use_https: false                  # Defualt: False
+    use_https: false                  # Default: False
 
 # Repos
 repos:
