@@ -3,7 +3,7 @@ Changelog
 
 This document describes changes between each past release.
 
-0.0.7 (unreleased)
+0.0.7 (2018-04-23)
 ------------------
 
 - Fix pip install by moving away of PEP 420 Namespaces. [pcdummy]
